@@ -358,6 +358,15 @@ Optional argument ARGS as per `browse-url-default-browser'"
    :utils "convert"))
 
 ;;;###autoload
+(defun dwim-shell-commands-kdeconnect-share (device)
+    "Send file(s) to DEVICE through KDE Connect."
+    (interactive "sDevice: ")
+    (dwim-shell-command-on-marked-files
+     "Send file(s) to DEVICE through KDE Connect."
+     (concat "kdeconnect-cli -n '" device "' --share '<<f>>'")
+     :utils "kdeconnect-cli"))
+
+;;;###autoload
 (defun dwim-shell-commands-keep-pdf-page ()
   "Keep a page from pdf."
   (interactive)

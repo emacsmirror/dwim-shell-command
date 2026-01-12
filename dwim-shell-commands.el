@@ -155,8 +155,8 @@ Optional argument ARGS as per `browse-url-default-browser'"
   (cl-assert (string-match-p "^http[s]?://" (current-kill 0)) nil "Not a URL")
   (dwim-shell-command-on-marked-files
    "Downloading"
-   "youtube-dl --newline -o \"~/Downloads/%(title)s.%(ext)s\" \"<<cb>>\""
-   :utils "youtube-dl"
+   "yt-dlp --newline -o \"~/Downloads/%(title)s.%(ext)s\" \"<<cb>>\""
+   :utils "yt-dlp"
    :no-progress t
    :error-autofocus t
    :monitor-directory "~/Downloads"
